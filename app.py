@@ -115,7 +115,7 @@ try:
         st.subheader("Modelos de Agrupamiento: K-Means y DBSCAN")
         col_k1, col_k2 = st.columns(2)
         with col_k1:
-            st.markdown("Parámetros K-Means")
+            st.markdown("K-Means")
             k_val = st.slider("Número de Clústeres (K)", 2, 10, 3)
             kmeans = KMeans(n_clusters=k_val, init='k-means++', n_init=10, random_state=42)
             labels_km = kmeans.fit_predict(X_scaled)
@@ -129,7 +129,7 @@ try:
             st.metric("Calinski-Harabasz K-Means", f"{chi_km:.4f}")
 
         with col_k2:
-            st.markdown("Parámetros DBSCAN")
+            st.markdown("DBSCAN")
             eps_val = st.slider("Epsilon (eps)", 0.1, 3.0, 0.8, 0.1)
             min_samp = st.slider("Min Samples", 2, 15, 5)
 
