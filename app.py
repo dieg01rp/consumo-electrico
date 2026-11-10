@@ -40,7 +40,7 @@ def descargar_y_procesar_datos():
         with st.spinner("Descargando el dataset desde el repositorio oficial de UCI (esto puede tomar un momento)..."):
             urllib.request.urlretrieve(url, zip_path)
             with zipfile.ZipFile(zip_path, 'r') as zip_ref:
-            # Verificación de seguridad para evitar Zip Slip (CWE-22)
+                # Verificación de seguridad para evitar Zip Slip (CWE-22)
                 for member in zip_ref.namelist():
                     filename = os.path.basename(member)
                     if not filename:
